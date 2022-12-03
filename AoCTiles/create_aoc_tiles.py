@@ -147,8 +147,8 @@ def get_font(size: int, path: str):
 
 # Fonts, note that the fonts sizes are specifically adjusted to the following fonts, if you change the fonts
 # you might need to adjust the font sizes and text locations in the rest of the script.
-main_font = functools.partial(get_font, path=AOC_TILES_SCRIPT_DIR / "fonts/PaytoneOne.ttf")
-secondary_font = functools.partial(get_font, path=AOC_TILES_SCRIPT_DIR / "fonts/SourceCodePro-Regular.otf")
+main_font = functools.partial(get_font, path=AOC_TILES_SCRIPT_DIR / "fonts/Roboto-Black.ttf")
+secondary_font = functools.partial(get_font, path=AOC_TILES_SCRIPT_DIR / "fonts/Roboto-Regular.ttf")
 
 DayScores = namedtuple("DayScores", ["time1", "rank1", "score1", "time2", "rank2", "score2"], defaults=[None] * 3)
 
@@ -303,27 +303,27 @@ def generate_day_tile_image(day: str, year: str, languages: list[str], day_score
     font_color = "white"
 
     # === Left side ===
-    drawer.text((3, -5), "Day", fill=font_color, align="left", font=main_font(20))
-    drawer.text((1, -10), str(day), fill=font_color, align="center", font=main_font(75))
+    drawer.text((3, 0), "Day", fill=font_color, align="left", font=main_font(20))
+    drawer.text((3, +13), str(day), fill=font_color, align="center", font=main_font(65))
     # Calculate font size based on number of characters, because it might overflow
     lang_as_str = " ".join(languages)
     lang_font_size = max(6, int(18 - max(0, len(lang_as_str) - 8) * 1.3))
-    drawer.text((0, 74), lang_as_str, fill=font_color, align="left", font=secondary_font(lang_font_size))
+    drawer.text((3, 77), lang_as_str, fill=font_color, align="left", font=secondary_font(lang_font_size))
 
     # === Right side (P1 & P2) ===
     for part in (1, 2):
         y = 50 if part == 2 else 0
         time, rank = getattr(day_scores, f"time{part}", None), getattr(day_scores, f"rank{part}", None)
         if day_scores is not None and time is not None:
-            drawer.text((104, -5 + y), f"P{part} ", fill=font_color, align="left", font=main_font(25))
+            drawer.text((104, -2 + y), f"P{part} ", fill=font_color, align="left", font=main_font(25))
             if SHOW_CHECKMARK_INSTEAD_OF_TIME_RANK:
                 drawer.line((160, 35 + y, 150, 25 + y), fill=font_color, width=2)
                 drawer.line((160, 35 + y, 180, 15 + y), fill=font_color, width=2)
                 continue
             drawer.text((105, 25 + y), "time", fill=font_color, align="right", font=secondary_font(10))
             drawer.text((105, 35 + y), "rank", fill=font_color, align="right", font=secondary_font(10))
-            drawer.text((143, 3 + y), format_time(time), fill=font_color, align="right", font=secondary_font(18))
-            drawer.text((133, 23 + y), f"{rank:>6}", fill=font_color, align="right", font=secondary_font(18))
+            drawer.text((143, 1 + y), format_time(time), fill=font_color, align="right", font=secondary_font(20))
+            drawer.text((133, 25 + y), f"{rank:>6}", fill=font_color, align="right", font=secondary_font(20))
         else:
             drawer.line((140, 15 + y, 160, 35 + y), fill=font_color, width=2)
             drawer.line((140, 35 + y, 160, 15 + y), fill=font_color, width=2)
