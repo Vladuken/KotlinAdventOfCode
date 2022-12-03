@@ -2,3 +2,7 @@
 .idea
 build
 src/**/*.txt
+session.cookie
+local.properties
+**.aoc_tiles_cache
+.DS_Store

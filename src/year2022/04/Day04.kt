@@ -1,3 +1,7 @@
+package year2022.`04`
+
+import readInput
+
 fun main() {
 
     fun part1(input: List<String>): Int {

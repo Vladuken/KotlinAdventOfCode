@@ -1,3 +1,7 @@
+package year2022.`01`
+
+import readInput
+
 fun main() {
 
     fun prepareListOfElfsWithCalories(input: List<String>): List<List<Int>> {

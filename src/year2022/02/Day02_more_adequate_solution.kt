@@ -1,3 +1,7 @@
+package year2022.`02`
+
+import readInput
+
 fun main() {
 
     fun part1(input: List<String>): Int {
@@ -47,7 +51,7 @@ fun main() {
 }
 
 /**
- * Representation of Figure with its value
+ * Representation of `year2022.02`.Figure with its value
  */
 enum class Figure(val amount: Int) {
     ROCK(1),
@@ -68,7 +72,7 @@ enum class Figure(val amount: Int) {
 
 
 /**
- * Outcome Representation with it value
+ * `year2022.02`.Outcome Representation with it value
  */
 enum class Outcome(val amount: Int) {
     LOSE(0),

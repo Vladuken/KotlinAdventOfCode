@@ -1,6 +1,11 @@
+package year2022.`03`
+
+import readInput
+
 const val ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 fun main() {
+    val ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     fun part1(input: List<String>): Int {
         return input
