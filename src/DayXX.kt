@@ -12,7 +12,7 @@ fun main() {
     val testInput = readInput("DayXX_test")
     val part1Test = part1(testInput)
 
-    //println(part1Test)
+    println(part1Test)
     check(part1Test == 1)
 
     val input = readInput("DayXX")
