@@ -2,8 +2,8 @@ package year2022.`19`
 
 import java.util.LinkedList
 import java.util.PriorityQueue
-import kotlin.system.measureTimeMillis
 import readInput
+import utils.doWithPrintedTime
 
 data class Resources(
     val ore: Int,
@@ -293,15 +293,4 @@ fun main() {
     doWithPrintedTime("Test 1") { part1(testInput) }
     doWithPrintedTime("Part 1") { part1(input) }
     doWithPrintedTime("Part 2") { part2(input) }
-}
-
-private fun doWithPrintedTime(
-    tag: String,
-    block: () -> Any,
-) {
-    measureTimeMillis {
-        println("$tag answer: " + block())
-    }.let {
-        println("$tag time spend: $it ms")
-    }
 }
