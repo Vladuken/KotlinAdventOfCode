@@ -79,6 +79,12 @@
 <a href="src/year2022/25/Day25.kt">
   <img src="Media/2022/25.png" width="161px">
 </a>
+<h1 align="center">
+  2021 - 2 ⭐
+</h1>
+<a href="src/year2021/01/Day01.kt">
+  <img src="Media/2021/01.png" width="161px">
+</a>
 <!-- AOC TILES END -->
 
 ##### Made with help of [LiquidFun][aocTiles] AOC repository
