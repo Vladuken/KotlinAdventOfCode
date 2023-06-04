@@ -282,7 +282,7 @@ def format_time(time: str) -> str:
         formatted = time
     else:
         h, m, s = time.split(":")
-        formatted = f">{h}h" if int(h) >= 1 else f"{m:02}:{s:02}"
+        formatted = f">{h}h" if int(h) >= 1 else f"{m}:{s}"
     return f"{formatted:>5}"
 
 
@@ -296,7 +296,7 @@ def draw_star(drawer: ImageDraw, at: tuple[int, int], size=9, color="#ffff0022",
     drawer.polygon(points, fill=color)
 
 
-def generate_day_tile_image(day: str, year: str, languages: list[str], day_scores: DayScores | None) -> Path:
+def generate_day_tile_image(day: str, year: str, languages: list[str], day_scores: DayScores) -> Path:
     """Saves a graphic for a given day and year. Returns the path to it."""
     image = get_alternating_background(languages, not (day_scores is None or day_scores.time2 is None))
     drawer = ImageDraw(image)
@@ -341,7 +341,7 @@ def generate_day_tile_image(day: str, year: str, languages: list[str], day_score
     return path
 
 
-def handle_day(day: int, year: int, solutions: list[str], html: HTML, day_scores: DayScores | None):
+def handle_day(day: int, year: int, solutions: list[str], html: HTML, day_scores: DayScores):
     languages = []
     for solution in solutions:
         extension = "." + solution.split(".")[-1]
