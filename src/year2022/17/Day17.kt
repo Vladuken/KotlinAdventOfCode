@@ -254,7 +254,7 @@ fun <T> infiniteIteratorHelper(
 }
 
 @Deprecated("Print this points")
-fun printSet(set: Set<Point>) {
+private fun printSet(set: Set<Point>) {
     val height = set.height()
     println()
     for (i in height downTo 0) {
