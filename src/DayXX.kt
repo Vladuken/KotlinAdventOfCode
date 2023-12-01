@@ -1,7 +1,7 @@
-private const val CURRENT_DAY = 0
+private const val CURRENT_DAY = "01"
 
 fun main() {
-    
+
     fun part1(input: List<String>): Int {
         return input.size
     }
@@ -17,7 +17,7 @@ fun main() {
     println(part1Test)
     check(part1Test == 1)
 
-    val input = readInput("$CURRENT_DAY")
+    val input = readInput("Day$CURRENT_DAY")
 
     // Part 1
     val part1 = part1(input)

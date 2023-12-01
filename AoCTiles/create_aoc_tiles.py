@@ -48,7 +48,7 @@ CREATE_ALL_DAYS = False
 
 # Instead of showing the time and rank you achieved this just shows whether
 # it was completed with a checkmark
-SHOW_CHECKMARK_INSTEAD_OF_TIME_RANK = True
+SHOW_CHECKMARK_INSTEAD_OF_TIME_RANK = False
 
 # The year and day pattern to detect directories. For example, if your day folders are
 # called "day1" to "day25" then set the pattern to r"day\d{1,2}". The script extracts
