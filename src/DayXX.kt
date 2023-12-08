@@ -1,3 +1,5 @@
+import readInput
+
 private const val CURRENT_DAY = "01"
 
 fun main() {
