@@ -53,7 +53,7 @@ SHOW_CHECKMARK_INSTEAD_OF_TIME_RANK = False
 # The year and day pattern to detect directories. For example, if your day folders are
 # called "day1" to "day25" then set the pattern to r"day\d{1,2}". The script extracts
 # a number from the folder and tries to guess its day that way.
-YEAR_PATTERN = r"year2023"
+YEAR_PATTERN = r"year\d{4}"
 DAY_PATTERN = r"\d{2}"
 SRC_AOC_DIR = AOC_DIR / "src"
 

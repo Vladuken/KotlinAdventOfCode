@@ -1,6 +1,11 @@
-import readInput
-
 private const val CURRENT_DAY = "01"
+
+
+private fun parseLineInto(
+    line: String
+): Any {
+    return 0
+}
 
 fun main() {
 
@@ -14,10 +19,14 @@ fun main() {
 
     // test if implementation meets criteria from the description, like:
     val testInput = readInput("Day${CURRENT_DAY}_test")
-    val part1Test = part1(testInput)
 
+    val part1Test = part1(testInput)
     println(part1Test)
     check(part1Test == 1)
+
+//    val part2Test = part2(testInput)
+//    println(part2Test)
+//    check(part2Test == 1)
 
     val input = readInput("Day$CURRENT_DAY")
 
