@@ -199,9 +199,6 @@
 <a href="src/year2021/17/Day17.kt">
   <img src="Media/2021/17.png" width="161px">
 </a>
-<a href="src/year2023/21/Day21.kt">
-  <img src="Media/2023/21.png" width="161px">
-</a>
 <!-- AOC TILES END -->
 
 ##### Made with help of [LiquidFun][aocTiles] AOC repository
