@@ -7,6 +7,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import readInput
+import kotlin.system.measureTimeMillis
 
 
 private const val CURRENT_DAY = "06"
@@ -55,10 +56,7 @@ private fun parseMap(input: List<String>): Pair<Point, Set<Point>> {
     return point!! to mutableMap
 }
 
-fun Point.isInBounds(points: Set<Point>): Boolean {
-    val maxX = points.maxOf { it.x }
-    val maxY = points.maxOf { it.y }
-
+fun Point.isInBounds(maxX: Int, maxY: Int): Boolean {
     return (x > maxX || y > maxY || x < 0 || y < 0).not()
 }
 
@@ -74,7 +72,10 @@ fun Set<Point>.moveAcrossMap(initialPoint: Point): Set<Point> {
     val visitedPoints = mutableSetOf(currentPoint)
     val visitedPointsDir = mutableSetOf(DirPoint(currentPoint, Direction.TOP))
 
-    while (currentPoint.isInBounds(this)) {
+    val maxX = this.maxOf { it.x }
+    val maxY = this.maxOf { it.y }
+
+    while (currentPoint.isInBounds(maxX, maxY)) {
         val visitedPointDirsBefore = visitedPointsDir.toSet()
 
         val newCurrentPoint = when (currentDirection) {
@@ -119,7 +120,7 @@ fun Set<Point>.moveAcrossMap(initialPoint: Point): Set<Point> {
             }
         }
 
-        if (newCurrentPoint.isInBounds(this)) {
+        if (newCurrentPoint.isInBounds(maxX, maxY)) {
             visitedPoints.add(newCurrentPoint)
             visitedPointsDir.add(DirPoint(newCurrentPoint, currentDirection))
             if (visitedPointsDir == visitedPointDirsBefore) {
@@ -211,7 +212,10 @@ fun main() {
     check(part1 == 4433)
 
     // Part 2
-    val part2 = part2(input)
-    println(part2)
-    check(part2 == 1516)
+    val time = measureTimeMillis {
+        val part2 = part2(input)
+        println(part2)
+        check(part2 == 1516)
+    }
+    println("TOOK $time ms")
 }
