@@ -218,6 +218,8 @@ private fun findAllLineOfItems(
 
                         resultList.addAll(checkBottomList)
                     }
+
+                    else -> {}
                 }
 
                 downPos
@@ -247,6 +249,8 @@ private fun findAllLineOfItems(
 
                         resultList.addAll(checkTopList)
                     }
+
+                    else -> {}
                 }
                 topPos
             }
